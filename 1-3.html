@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>控制dom对象</title>
+			<style>
+				.iframe{border:1px solid #888;font-size:13px}
+				.title{padding:6px;background-color:#EEE}
+				.content{padding:8px;font-size:12px}
+				.tip{background-color:#eee;display:none;font-size:12px;padding:8px}
+				.txt{border:solid 1px #888}
+				.btn{border:solid 1px #888;width:60px}
+				.w260{width:260px}
+			</style>
+	</head>
+	<body>
+	<div class="iframe">
+		<div class="title">请输入如下信息</div>
+			<div class="content">
+				姓名:<input id="name" type="text" class="txt"><br/>
+				性别:<input id="sex" name="rdoSex" type="radio" value="男">男
+					<input id="Radio2" name="rdoSex" type="radio" value="女">女<br>
+				婚否:<input id="Checkbox1" type="checkbox"><br><br>
+					<input id="btnSubmit" type="button" value="提交" class="btn" onclick="btn_Click();"><br><br>
+			</div>
+		<div id="Tip" class="tip"></div>
+	</div>
+	<script type="text/javascript"src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$("#btnSubmit").click(function(){
+				//获取文本的值
+				var name = $("#name").val();
+				//获取性别的值
+				var sex = $("#sex").is(":checked")?"男":"女";
+				//获取婚否值
+				var Checkbox1 = $("#Checkbox1").is(":checked")?"已婚":"未婚";
+				//显示提示文本元素和内容
+				$("#Tip").css("display","block").html(name+"<br>"+sex+"<br>"+Checkbox1);
+			});
+		});
+	</script>
+	</body>
+</html>
+
+
+
+
+
+
